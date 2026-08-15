@@ -17,7 +17,7 @@ set -o pipefail
 REPO="github/app"
 ASSET_BASENAME="GitHub-Copilot-linux"
 
-update_copilot() {
+update-copilot() {
     local current latest pkg_file gh_pid installed pkg_mgr pkg_name pkg_version_query asset_ext download_url
 
     if command -v rpm >/dev/null 2>&1 && (command -v dnf >/dev/null 2>&1 || command -v yum >/dev/null 2>&1); then
@@ -107,5 +107,5 @@ update_copilot() {
 # Allow the script to be sourced (to reuse the function directly) or run
 # standalone (to execute immediately).
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    update_copilot "$@"
+    update-copilot "$@"
 fi
